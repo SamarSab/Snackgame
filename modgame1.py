@@ -4,7 +4,11 @@ import random
 import sys
 
 co=0
-bg='no'
+bg="no"
+sc="no"
+fc="no"
+tc="no"
+bc="no"
 delay=0.1
 
 # Score
@@ -21,9 +25,9 @@ def choice_user():
 ch= choice_user()
 if  ch==1 :
   print("------------SETTINGS------------")
-  se={1: "Background color  (def. white)" ,2: "Snack color ( def. black)" ,3: "Food color (def. red)", 4: "Text color ( def.  black)", 5: "Return to main menu"}
+  se={1: "Background color  (def. white)" ,2: "Snack color ( def. black)" ,3: "Food color (def. red)", 4: "Text color ( def.  black)", 5: "Snack's Body color ( def. grey)",6:"Return to main menu"}
   print(se)
-  co=2
+  co=0
   co= int(input("Enter Your Choice: "))
   if co==1 :
       bg=input("Enter the color for background(all letters in smallcase)")
@@ -37,13 +41,25 @@ if  ch==1 :
   elif co==4 :
        tc=input("Enter the color of text (all letters in smallcase)")
        choice_user()
-
+  elif co==5:
+        bc=input("Eter the color of body of snack (all letters in smallcase)")
+        choice_user()
+  elif co ==6 : 
+        choice_user()
 if ch==2 :
 # Set up the screen
   wn=turtle.Screen()
   wn.title("Snake Game by Bhavy, Anuj, Abhinav and Prabhjot")
   if co==1 :
      wn.bgcolor(bg)
+  if sc== "white":
+     wn.bgcolor("green")
+  if fc=="white":
+     wn.bgcolor("green")
+  if tc =="white":
+     wn.bgcolor("green")
+  if bc=="white":
+     wn.bgcolor("green")
   else:
      wn.bgcolor("white")
   wn.setup(width=600, height=600)
@@ -55,8 +71,8 @@ if ch==2 :
   head.shape("square")
   if co==2 :
     head.color(sc)
-  elif bg=='black':
-    head.color('white')
+  elif bg=="black":
+    head.color("white")
   else:
     head.color("black")
   head.penup()
@@ -69,7 +85,7 @@ if ch==2 :
   food.shape("circle")
   if co==3 :
     food.color(fc)
-  elif bg== 'red':
+  elif bg== "red":
     food.color("white")
   else:
     food.color("red")
@@ -84,14 +100,14 @@ if ch==2 :
   pen.shape("square")
   if co==4 :
     pen.color(tc)
-  elif bg=='black':
-    pen.color('white')
+  elif bg=="black":
+    pen.color("white")
   else:
     pen.color("black")
   pen.penup()
   pen.hideturtle()
   pen.goto(0, 260)
-  pen.write("Score: 0  High Score: 0", align="center", font=("Courier", 24, "normal"))
+  pen.write("Score: 0  High Score: 0", align="center", font=("Bauhaus 93", 24, "normal"))
 
   # Functions
   def go_up():
@@ -158,7 +174,7 @@ if ch==2 :
           delay=0.1
 
           pen.clear()
-          pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
+          pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Bauhaus 93", 24, "normal"))
 
 
       # Check for a collision with the food
@@ -186,7 +202,7 @@ if ch==2 :
               high_score=score
 
           pen.clear()
-          pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
+          pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Bauhaus 93", 24, "normal"))
 
       # Move the end segments first in reverse order
       for index in range(len(segments)-1, 0, -1):
@@ -224,7 +240,7 @@ if ch==2 :
 
               # Update the score display
               pen.clear()
-              pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
+              pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Bauhaus 93", 24, "normal"))
 
       time.sleep(delay)
 
