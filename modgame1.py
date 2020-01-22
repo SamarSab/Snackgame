@@ -4,6 +4,7 @@ import random
 import sys
 
 co=0
+bg='no'
 delay=0.1
 
 # Score
