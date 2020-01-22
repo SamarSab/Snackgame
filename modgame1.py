@@ -188,7 +188,11 @@ if ch==2 :
           new_segment=turtle.Turtle()
           new_segment.speed(0)
           new_segment.shape("square")
-          new_segment.color("grey")
+          if co==5:
+            new_segment.color(bc)
+          else:
+            new_segment.color("grey")
+
           new_segment.penup()
           segments.append(new_segment)
 
