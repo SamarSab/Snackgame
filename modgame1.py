@@ -50,7 +50,7 @@ if  ch==1 :
 if ch==2 :
 # Set up the screen
   wn=turtle.Screen()
-  wn.title("Snake Game by Siddharth")
+  wn.title("Snake Game by Bhavy Samar.")
   if co==1 :
      wn.bgcolor(bg)
   if sc== "white":
