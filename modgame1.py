@@ -1,7 +1,8 @@
-﻿import turtle
+import turtle
 import time
 import random
 import sys
+
 
 co=0
 bg="no"
@@ -17,7 +18,7 @@ high_score=0
 
 def choice_user():
     global ch
-    m={1: "Setting" , 2: "Start" , 3: "Exit" }
+    m={1: "Setting" , 2: "Start" , 3: "How to PLAY??" , 4: "Exit" }
     print(m)
     ch=int(input("Enter Your Choice: "))
     return ch
@@ -49,7 +50,7 @@ if  ch==1 :
 if ch==2 :
 # Set up the screen
   wn=turtle.Screen()
-  wn.title("Snake Game by Bhavy")
+  wn.title("Snake Game by Siddharth")
   if co==1 :
      wn.bgcolor(bg)
   if sc== "white":
@@ -249,6 +250,11 @@ if ch==2 :
       time.sleep(delay)
 
   wn.mainloop()
-
-if ch==3 :
+if ch ==3 :
+   print ("Press 8 to go UP")
+   print("Press 2 to go DOWN")
+   print("Press 4 to go LEFT")
+   print("Press 6 to go RIGHT")
+   choice_user()
+if ch==4 :
    sys.exit()
